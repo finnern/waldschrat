@@ -493,15 +493,18 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            font-size: 2rem;
+            width: 60px;
+            height: auto;
             z-index: 1000;
             animation: strum 4s ease-in-out infinite;
             cursor: pointer;
             transition: transform 0.3s ease;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
         }
 
         .ukulele-accent:hover {
             transform: scale(1.2) rotate(10deg);
+            filter: drop-shadow(0 6px 12px rgba(59, 130, 246, 0.5));
         }
 
         @keyframes strum {
@@ -514,7 +517,7 @@
 </head>
 <body>
     <!-- Floating Ukulele -->
-    <div class="ukulele-accent" onclick="playChord()">🎸</div>
+    <img src="ukulele.jpg" alt="Carbon Fiber Ukulele" class="ukulele-accent" onclick="playChord()">
 
     <!-- Hero Section -->
     <section class="hero">
@@ -646,7 +649,7 @@
         function playChord() {
             const ukulele = document.querySelector('.ukulele-accent');
             ukulele.style.transform = 'scale(1.5) rotate(20deg)';
-            ukulele.style.filter = 'drop-shadow(0 0 10px #f97316)';
+            ukulele.style.filter = 'drop-shadow(0 8px 16px rgba(249, 115, 22, 0.6)) brightness(1.2)';
             
             // Create floating musical notes
             for (let i = 0; i < 3; i++) {
@@ -666,7 +669,7 @@
             
             setTimeout(() => {
                 ukulele.style.transform = '';
-                ukulele.style.filter = '';
+                ukulele.style.filter = 'drop-shadow(0 4px 8px rgba(0,0,0,0.3))';
             }, 300);
         }
 
