@@ -1,1 +1,717 @@
-Hello World
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waldschrat Consulting | Black Forest meets Silicon Valley</title>
+    <meta name="description" content="KI-Beratung für mittelständische Unternehmen. Wo Black Forest auf Silicon Valley trifft - praktische AI-Lösungen für Ihren Erfolg.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%);
+            color: white;
+            padding: 4rem 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1.5" fill="rgba(255,255,255,0.1)"/></svg>');
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            text-align: center;
+            animation: slideUp 1s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        .hero h1::after {
+            content: '🎸';
+            position: absolute;
+            right: -60px;
+            top: -10px;
+            font-size: 2rem;
+            animation: swing 2s ease-in-out infinite;
+        }
+
+        @keyframes swing {
+            0%, 100% { transform: rotate(-5deg); }
+            50% { transform: rotate(5deg); }
+        }
+
+        .hero .tagline {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            font-style: italic;
+            color: #fbbf24;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #f97316;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(249, 115, 22, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '👓';
+            position: absolute;
+            left: -30px;
+            transition: left 0.3s ease;
+        }
+
+        .cta-button:hover::before {
+            left: 10px;
+        }
+
+        .cta-button:hover {
+            background: #ea580c;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(249, 115, 22, 0.4);
+            padding-left: 3rem;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 5rem 0;
+            background: #f8fafc;
+            position: relative;
+        }
+
+        .services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #3b82f6, #f97316, #3b82f6);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #1e40af;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '🎵';
+            position: absolute;
+            right: -50px;
+            top: 0;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid #3b82f6;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.3s ease;
+            opacity: 0;
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+            transform: rotate(45deg) translateX(100%);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            border-top-color: #f97316;
+        }
+
+        .service-card h3 {
+            color: #1e40af;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .service-card p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+
+
+        /* About Section */
+        .about {
+            padding: 5rem 0;
+            background: white;
+            position: relative;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M20,30 Q40,10 60,30 Q80,50 60,70 Q40,90 20,70 Q0,50 20,30" fill="rgba(59,130,246,0.1)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .profile-section {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #3b82f6;
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+            transition: all 0.3s ease;
+            animation: profileFloat 3s ease-in-out infinite;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05) rotate(5deg);
+            border-color: #f97316;
+            box-shadow: 0 15px 40px rgba(249, 115, 22, 0.4);
+        }
+
+        @keyframes profileFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .profile-caption {
+            margin-top: 1rem;
+            font-style: italic;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .about-text h2 {
+            color: #1e40af;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .about-text h2::before {
+            content: '🌲';
+            margin-right: 0.5rem;
+        }
+
+        .about-features {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 5px solid #f97316;
+            position: relative;
+        }
+
+        .about-features::after {
+            content: '🎸';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            font-size: 2rem;
+            transform: rotate(15deg);
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 2rem;
+            transition: transform 0.2s ease;
+        }
+
+        .feature-list li:hover {
+            transform: translateX(5px);
+        }
+
+        .feature-list li::before {
+            content: "⚡";
+            position: absolute;
+            left: 0;
+            color: #3b82f6;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="10" cy="10" r="1" fill="rgba(249,115,22,0.3)"/><circle cx="90" cy="20" r="1.5" fill="rgba(249,115,22,0.3)"/><circle cx="20" cy="90" r="1" fill="rgba(249,115,22,0.3)"/><circle cx="80" cy="80" r="1.2" fill="rgba(249,115,22,0.3)"/></svg>');
+            animation: float 15s infinite linear reverse;
+        }
+
+        .contact h2 {
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact p {
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-item {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(249, 115, 22, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(249, 115, 22, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .contact-item h3 {
+            margin-bottom: 0.5rem;
+            color: #fbbf24;
+        }
+
+        .contact-item a {
+            color: #fbbf24;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: white;
+        }
+
+        /* Footer */
+        .footer {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '🎵 🌲 ⚡ 👓 🎸';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 0.8rem;
+            opacity: 0.3;
+            letter-spacing: 2rem;
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { opacity: 0.3; }
+            to { opacity: 0.6; }
+        }
+
+        /* Responsive Design */
+            @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero h1::after {
+                right: -40px;
+                font-size: 1.5rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile-image {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+
+            .section-title::after {
+                right: -30px;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animation delays for service cards */
+        .service-card:nth-child(1) { animation: slideUp 1s ease-out 0.1s both; }
+        .service-card:nth-child(2) { animation: slideUp 1s ease-out 0.2s both; }
+        .service-card:nth-child(3) { animation: slideUp 1s ease-out 0.3s both; }
+        .service-card:nth-child(4) { animation: slideUp 1s ease-out 0.4s both; }
+
+        /* Ukulele motif */
+        .ukulele-accent {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 2rem;
+            z-index: 1000;
+            animation: strum 4s ease-in-out infinite;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .ukulele-accent:hover {
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        @keyframes strum {
+            0%, 100% { transform: rotate(-2deg); }
+            25% { transform: rotate(2deg); }
+            50% { transform: rotate(-1deg); }
+            75% { transform: rotate(1deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Ukulele -->
+    <div class="ukulele-accent" onclick="playChord()">🎸</div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Waldschrat Consulting</h1>
+                <p class="tagline">Black Forest meets Silicon Valley</p>
+                <p>KI-Beratung für mittelständische Unternehmen und Einzelpersonen. Praktische KI-Lösungen, die funktionieren – ohne Fachjargon, mit messbaren Ergebnissen. Mit Ukulele und 30 Jahren Innovationserfahrung.</p>
+                <a href="#contact" class="cta-button">Zeit für Innovation!</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Unsere Leistungen</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3><span>🎯</span> Premium KI-Strategieberatung</h3>
+                    <p>Bedarfsanalyse und strategische Integration von KI-Lösungen. Von der Potenzialermittlung bis zur erfolgreichen Umsetzung – mit der Erfahrung aus 30 Jahren Innovation.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3><span>⚡</span> InnoKURZ-Workshops</h3>
+                    <p>Transformieren Sie Kurzarbeit in Innovation! Strukturierte Workshops zur KI-gestützten Ideenfindung und Prototypenentwicklung – inklusive motivierender Ukulele-Pausen.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3><span>🤖</span> Maßgeschneiderte KI-Lösungen</h3>
+                    <p>Personalisierte KI-Assistenten für Ihr Unternehmen. Wie unser "Elektro Einstein GPT" – speziell für Ihre Branche entwickelt, mit Schwarzwälder Gründlichkeit und Silicon Valley Innovation.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3><span>🔍</span> KI-Agenten für Marktanalysen</h3>
+                    <p>Hochspezialisierte Analysetools wie "Strategy Sherlock" für automatisierte Wettbewerbsüberwachung und Markttrends. Daten werden zu Melodien des Erfolgs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="profile-section">
+                <img src="profile.jpg" alt="Mark Finnern - Der Waldschrat" class="profile-image">
+                <p class="profile-caption">Der Waldschrat in seinem natürlichen Habitat 🌲🎸</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Der Waldschrat</h2>
+                    <p>Mit über 30 Jahren Erfahrung in Innovation und Community Building bringe ich Silicon Valley Know-how zurück in den Schwarzwald. Als ehemaliger SAP Chief Community Evangelist und Software AG Innovation Leader verbinde ich globale Tech-Expertise mit regionalem Geschäftsverständnis.</p>
+                    <p>Mein Ansatz: Komplexe KI-Technologien verständlich machen und praktisch umsetzen – ohne Hype, mit nachweisbaren Ergebnissen. Und ja, die Ukulele ist immer dabei – manchmal braucht Innovation den richtigen Rhythmus.</p>
+                </div>
+                <div class="about-features">
+                    <h3>Was mich auszeichnet</h3>
+                    <ul class="feature-list">
+                        <li>30+ Jahre Innovationserfahrung mit Ukulele-Power</li>
+                        <li>Erster Enterprise ChatGPT Connector entwickelt</li>
+                        <li>SAP Community mit 2 Mio. Mitgliedern aufgebaut</li>
+                        <li>Silicon Valley Netzwerk zu Tech-Pionieren</li>
+                        <li>Spezialisierung auf deutsche Mittelstandsbedürfnisse</li>
+                        <li>Verständliche Kommunikation ohne Fachjargon</li>
+                        <li>Musikgetriebene Workshops für entspannte Innovation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Zeit für Innovation!</h2>
+            <p>Bereit für den nächsten Schritt? Kontaktieren Sie den Waldschrat für eine unverbindliche Beratung – mit oder ohne Ukulele-Begleitung.</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>📧 Email</h3>
+                    <p><a href="mailto:mark@waldschrat.co">mark@waldschrat.co</a></p>
+                </div>
+                
+                <div class="contact-item">
+                    <h3>📱 Telefon</h3>
+                    <p>+49 170 66 88 3 88</p>
+                </div>
+                
+                <div class="contact-item">
+                    <h3>🌐 LinkedIn</h3>
+                    <p><a href="https://linkedin.com/in/finnern">linkedin.com/in/finnern</a></p>
+                </div>
+                
+                <div class="contact-item">
+                    <h3>📍 Standort</h3>
+                    <p>Schramberg, Schwarzwald<br>Baden-Württemberg</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Waldschrat Consulting. Wo Tradition auf Innovation trifft – mit dem richtigen Rhythmus.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add subtle parallax effect to hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+            }
+        });
+
+        // Ukulele chord sound (visual feedback)
+        function playChord() {
+            const ukulele = document.querySelector('.ukulele-accent');
+            ukulele.style.transform = 'scale(1.5) rotate(20deg)';
+            ukulele.style.filter = 'drop-shadow(0 0 10px #f97316)';
+            
+            // Create floating musical notes
+            for (let i = 0; i < 3; i++) {
+                const note = document.createElement('div');
+                note.innerHTML = ['🎵', '🎶', '🎼'][i];
+                note.style.position = 'fixed';
+                note.style.bottom = '80px';
+                note.style.right = `${30 + i * 15}px`;
+                note.style.fontSize = '1.5rem';
+                note.style.animation = `floatUp 2s ease-out forwards`;
+                note.style.pointerEvents = 'none';
+                note.style.zIndex = '9999';
+                document.body.appendChild(note);
+                
+                setTimeout(() => note.remove(), 2000);
+            }
+            
+            setTimeout(() => {
+                ukulele.style.transform = '';
+                ukulele.style.filter = '';
+            }, 300);
+        }
+
+        // Add CSS for floating notes animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes floatUp {
+                0% {
+                    opacity: 1;
+                    transform: translateY(0px) rotate(0deg);
+                }
+                100% {
+                    opacity: 0;
+                    transform: translateY(-100px) rotate(360deg);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Easter egg: Konami code for ukulele mode
+        let konamiCode = [];
+        const sequence = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
+        
+        document.addEventListener('keydown', (e) => {
+            konamiCode.push(e.keyCode);
+            if (konamiCode.length > sequence.length) {
+                konamiCode.shift();
+            }
+            
+            if (konamiCode.join(',') === sequence.join(',')) {
+                document.body.style.animation = 'rainbow 3s infinite';
+                const style = document.createElement('style');
+                style.textContent = `
+                    @keyframes rainbow {
+                        0% { filter: hue-rotate(0deg); }
+                        100% { filter: hue-rotate(360deg); }
+                    }
+                `;
+                document.head.appendChild(style);
+                
+                setTimeout(() => {
+                    document.body.style.animation = '';
+                }, 3000);
+            }
+        });
+    </script>
+</body>
+</html>
