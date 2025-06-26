@@ -172,10 +172,14 @@
         }
 
         .section-title::after {
-            content: '🎵';
+            content: '';
             position: absolute;
-            right: -50px;
+            right: -60px;
             top: 0;
+            width: 40px;
+            height: 40px;
+            background: url('ukulele.png') no-repeat center;
+            background-size: contain;
             animation: bounce 2s infinite;
         }
 
@@ -309,8 +313,14 @@
         }
 
         .about-text h2::before {
-            content: '🌲';
+            content: '';
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background: url('ukulele.png') no-repeat center;
+            background-size: contain;
             margin-right: 0.5rem;
+            vertical-align: middle;
         }
 
         .about-features {
@@ -344,15 +354,35 @@
             transition: transform 0.2s ease;
         }
 
-        .feature-list li:hover {
-            transform: translateX(5px);
+        .community-cta {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+            border-radius: 10px;
+            text-align: center;
+            color: white;
         }
 
-        .feature-list li::before {
-            content: "⚡";
-            position: absolute;
-            left: 0;
-            color: #3b82f6;
+        .community-cta h4 {
+            margin-bottom: 1rem;
+            color: #fbbf24;
+        }
+
+        .community-button {
+            display: inline-block;
+            background: #f97316;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .community-button:hover {
+            background: #ea580c;
+            transform: translateY(-2px);
         }
 
         /* Contact Section */
@@ -564,6 +594,10 @@
         <div class="container">
             <h2 class="section-title">Unsere Leistungen</h2>
             <div class="services-grid">
+                    <h3>🌐 KI-Impact Community</h3>
+                    <p>Gründer und Moderator der KI-Impact Community im Schwarzwald. Transferiere Silicon Valley Innovationsmethoden in die Region und vernetze lokale Unternehmen mit globalen Trends.</p>
+                </div>
+                
                 <div class="service-card">
                     <h3><span>🎯</span> Premium KI-Strategieberatung</h3>
                     <p>Bedarfsanalyse und strategische Integration von KI-Lösungen. Von der Potenzialermittlung bis zur erfolgreichen Umsetzung – mit der Erfahrung aus 30 Jahren Innovation.</p>
@@ -609,8 +643,16 @@
                         <li>Silicon Valley Netzwerk zu Tech-Pionieren</li>
                         <li>Spezialisierung auf deutsche Mittelstandsbedürfnisse</li>
                         <li>Verständliche Kommunikation ohne Fachjargon</li>
+                        <li>Gründer der KI-Impact Community Schwarzwald</li>
+                        <li>Regelmäßige Workshops und Vernetzungsformate</li>
                         <li>Musikgetriebene Workshops für entspannte Innovation</li>
                     </ul>
+                    
+                    <div class="community-cta">
+                        <h4>🚀 Werden Sie Teil der Community!</h4>
+                        <p>Schließen Sie sich unserer <strong>KI-Impact LinkedIn Gruppe</strong> an und erleben Sie, wie Silicon Valley Innovation den Schwarzwald erreicht.</p>
+                        <a href="https://www.linkedin.com/groups/ki-impact" target="_blank" class="community-button">KI-Impact Gruppe beitreten</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -624,22 +666,22 @@
             
             <div class="contact-info">
                 <div class="contact-item">
-                    <h3>📧 Email</h3>
+                    <h3>Email</h3>
                     <p><a href="mailto:mark@waldschrat.co">mark@waldschrat.co</a></p>
                 </div>
                 
                 <div class="contact-item">
-                    <h3>📱 Telefon</h3>
+                    <h3>Telefon</h3>
                     <p>+49 170 66 88 3 88</p>
                 </div>
                 
                 <div class="contact-item">
-                    <h3>🌐 LinkedIn</h3>
+                    <h3>LinkedIn</h3>
                     <p><a href="https://linkedin.com/in/finnern">linkedin.com/in/finnern</a></p>
                 </div>
                 
                 <div class="contact-item">
-                    <h3>📍 Standort</h3>
+                    <h3>Standort</h3>
                     <p>Schramberg, Schwarzwald<br>Baden-Württemberg</p>
                 </div>
             </div>
