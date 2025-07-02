@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TheWaldschrat.com | Black Forest meets Silicon Valley</title>
-    <meta name="description" content="Waldschrat Innovations-Beratung für mittelständische Unternehmen. Wo Black Forest auf Silicon Valley trifft - KI und Innovation für Ihren Erfolg.">
+    <title>TheWaldschrat.com | Der Waldführer ist zurück</title>
+    <meta name="description" content="20 Jahre Silicon Valley → Schwarzwald Innovation. Wo Kevin Kellys White Spaces auf Waldschrat-Weisheit treffen. KI-Beratung mit Future Salon Expertise.">
     
     <style>
         * {
@@ -81,16 +81,12 @@
         }
 
         .hero h1::after {
-            content: '';
+            content: '🌲';
             position: absolute;
             right: -70px;
             top: -10px;
-            width: 40px;
-            height: 40px;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L19 7V17L12 22L5 17V7L12 2Z"/></svg>') no-repeat center;
-            background-size: contain;
+            font-size: 3rem;
             animation: swing 2s ease-in-out infinite;
-            color: #fbbf24;
         }
 
         @keyframes swing {
@@ -99,16 +95,17 @@
         }
 
         .hero .tagline {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
             opacity: 0.9;
             font-style: italic;
             color: #fbbf24;
+            font-weight: 600;
         }
 
         .hero .subtitle {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
             color: #e2e8f0;
             font-weight: 500;
         }
@@ -163,7 +160,7 @@
         }
 
         .cta-button.secondary::before {
-            content: '🍸';
+            content: '🌲';
         }
 
         .cta-button:hover::before {
@@ -177,14 +174,14 @@
             padding-left: 3rem;
         }
 
-        /* Innovation Areas Section */
-        .innovation-areas {
-            padding: 5rem 0;
-            background: #f8fafc;
+        /* Credentials Section */
+        .credentials {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
             position: relative;
         }
 
-        .innovation-areas::before {
+        .credentials::before {
             content: '';
             position: absolute;
             top: 0;
@@ -192,6 +189,81 @@
             right: 0;
             height: 5px;
             background: linear-gradient(90deg, #3b82f6, #f97316, #10b981, #8b5cf6, #3b82f6);
+        }
+
+        .credentials h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #1e40af;
+        }
+
+        .credentials-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #64748b;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .credentials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .credential-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 5px solid #f97316;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .credential-item::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(249, 115, 22, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.3s ease;
+            opacity: 0;
+        }
+
+        .credential-item:hover::before {
+            opacity: 1;
+            transform: rotate(45deg) translateX(100%);
+        }
+
+        .credential-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .credential-item h3 {
+            color: #1e40af;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .credential-item p {
+            color: #666;
+        }
+
+        /* Innovation Areas Section */
+        .innovation-areas {
+            padding: 5rem 0;
+            background: #f8fafc;
+            position: relative;
         }
 
         .section-title {
@@ -292,8 +364,8 @@
             font-weight: bold;
         }
 
-        /* Cocktail Section */
-        .cocktail-section {
+        /* Kevin Kelly White Space Section */
+        .white-space-section {
             padding: 5rem 0;
             background: linear-gradient(135deg, #064e3b 0%, #059669 50%, #10b981 100%);
             color: white;
@@ -301,7 +373,7 @@
             overflow: hidden;
         }
 
-        .cocktail-section::before {
+        .white-space-section::before {
             content: '';
             position: absolute;
             top: 0;
@@ -312,7 +384,7 @@
             animation: float 25s infinite linear;
         }
 
-        .cocktail-content {
+        .white-space-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 3rem;
@@ -321,53 +393,78 @@
             z-index: 1;
         }
 
-        .cocktail-visual {
+        .white-space-visual {
             text-align: center;
             position: relative;
         }
 
-        .cocktail-glass {
+        .waldschrat-icon {
             font-size: 8rem;
-            animation: cocktailFloat 3s ease-in-out infinite;
+            animation: waldschratFloat 3s ease-in-out infinite;
             filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
         }
 
-        @keyframes cocktailFloat {
+        @keyframes waldschratFloat {
             0%, 100% { transform: translateY(0px) rotate(-2deg); }
             50% { transform: translateY(-10px) rotate(2deg); }
         }
 
-        .cocktail-info h2 {
+        .white-space-info h2 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
             color: #fbbf24;
         }
 
-        .cocktail-recipe {
+        .kelly-quote {
             background: rgba(255,255,255,0.1);
             padding: 1.5rem;
             border-radius: 15px;
             margin: 2rem 0;
             backdrop-filter: blur(10px);
+            border-left: 4px solid #fbbf24;
+            font-style: italic;
         }
 
-        .cocktail-recipe h4 {
+        .kelly-quote h4 {
             color: #fbbf24;
             margin-bottom: 1rem;
+            font-style: normal;
         }
 
-        .ingredient {
-            display: flex;
-            justify-content: space-between;
-            padding: 0.3rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.2);
-        }
-
-        .innovation-metaphor {
+        .white-space-metaphor {
             background: rgba(249, 115, 22, 0.2);
             padding: 1.5rem;
             border-radius: 15px;
             border-left: 4px solid #fbbf24;
+        }
+
+        /* Proof Section */
+        .proof-section {
+            padding: 4rem 0;
+            background: #f1f5f9;
+        }
+
+        .proof-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .proof-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            border-left: 4px solid #10b981;
+        }
+
+        .proof-item h4 {
+            color: #1e40af;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         /* About Section */
@@ -421,6 +518,10 @@
             color: #1e40af;
             margin-bottom: 1.5rem;
             position: relative;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
         }
 
         .about-features {
@@ -482,13 +583,29 @@
             text-decoration: none;
             border-radius: 25px;
             font-weight: 600;
-            margin-top: 1rem;
+            margin: 0.5rem;
             transition: all 0.3s ease;
         }
 
         .community-button:hover {
             background: #ea580c;
             transform: translateY(-2px);
+        }
+
+        .workshop-highlight {
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            color: white;
+            text-align: center;
+            margin: 2rem 0;
+            box-shadow: 0 10px 30px rgba(249, 115, 22, 0.3);
+        }
+
+        .workshop-highlight h3 {
+            color: #fbbf24;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
         }
 
         /* Contact Section */
@@ -594,16 +711,15 @@
             
             .hero h1::after {
                 right: -50px;
-                width: 30px;
-                height: 30px;
+                font-size: 2rem;
             }
             
-            .cocktail-content,
+            .white-space-content,
             .about-content {
                 grid-template-columns: 1fr;
             }
             
-            .cocktail-glass {
+            .waldschrat-icon {
                 font-size: 6rem;
             }
             
@@ -619,6 +735,10 @@
             .cta-buttons {
                 flex-direction: column;
                 align-items: center;
+            }
+
+            .credentials-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -673,13 +793,98 @@
         <div class="container">
             <div class="hero-content">
                 <h1>TheWaldschrat.com</h1>
-                <p class="tagline">Black Forest meets Silicon Valley</p>
-                <p class="subtitle">Waldschrat Innovations-Beratung</p>
-                <p>Wo Innovation auf Tradition trifft. Mit über 30 Jahren Silicon Valley Erfahrung und Schwarzwälder Gründlichkeit transformiere ich Unternehmen durch praktische Innovation – angeführt von KI, verstärkt durch Kreativität.</p>
+                <p class="tagline">Der Waldführer ist zurück</p>
+                <p class="subtitle">20 Jahre Silicon Valley → Schwarzwald Innovation</p>
+                <p>Nach zwei Jahrzehnten bei den Tech-Visionären des Silicon Valley bringe ich deren Weisheit in die Schwarzwälder Innovationslandschaft. Wo Kevin Kellys "White Spaces" auf Waldschrat-Weisheit treffen.</p>
                 
                 <div class="cta-buttons">
-                    <a href="#innovation" class="cta-button">Innovation starten!</a>
-                    <a href="#cocktail" class="cta-button secondary">Taste the Innovation!</a>
+                    <a href="#white-space" class="cta-button">White Spaces erschließen!</a>
+                    <a href="#about" class="cta-button secondary">Die Heldenreise erleben!</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Credentials Section -->
+    <section class="credentials">
+        <div class="container">
+            <h2>🎯 Meine Lehrjahre im Tal der Zukunftsmacher</h2>
+            <p class="credentials-subtitle">"Nit schwätza macha" - 20+ Jahre Beweis durch Taten mit den Pionieren der Tech-Revolution</p>
+            
+            <div class="credentials-grid">
+                <div class="credential-item">
+                    <h3>🚀 Future Salon Gründer (2002-2022)</h3>
+                    <p>20 Jahre Gastgeber für Tech-Visionäre: Kevin Kelly, Doug Engelbart, David Brin, Jaron Lanier und die Pioniere der digitalen Revolution. Über 200 Events mit den Denkern, die unsere Zukunft prägten.</p>
+                </div>
+                
+                <div class="credential-item">
+                    <h3>⚡ SAP Chief Community Evangelist</h3>
+                    <p>Aufbau einer 2 Millionen-Community, Transformation der globalen Entwicklerkultur, Erfindung des SAP Mentors-Programms. Patent für Traffic Monitoring Systems.</p>
+                </div>
+                
+                <div class="credential-item">
+                    <h3>🎸 Software AG Innovation Leader</h3>
+                    <p>Erster Enterprise ChatGPT Connector - 4 Wochen nach GPT-3.5 Release. Von der Idee zur Kundenfreigabe in 6 Wochen. KI-Pionier vor dem Hype.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kevin Kelly White Space Section -->
+    <section id="white-space" class="white-space-section">
+        <div class="container">
+            <div class="white-space-content">
+                <div class="white-space-visual">
+                    <div class="waldschrat-icon">🌲🦌</div>
+                    <h3 style="color: #fbbf24; margin-top: 1rem;">Der Waldschrat</h3>
+                    <p style="font-style: italic;">Wo KI nicht hinkommt</p>
+                </div>
+                
+                <div class="white-space-info">
+                    <h2>Kevin Kellys "White Spaces" erschließen</h2>
+                    <p>Mein Mentor Kevin Kelly lehrte mich: Die größten Chancen liegen in den Bereichen, die KI nicht automatisieren kann. Der Waldschrat ist so ein "White Space" - unbesetzt von Disney, authentisch deutsch, voller ungenutzter Potentiale.</p>
+                    
+                    <div class="kelly-quote">
+                        <h4>💡 Kevin Kelly, Mitgründer WIRED Magazine:</h4>
+                        <p>"Small data trumps big data. The greatest opportunities lie in whitespace - empty spaces between established domains where there's nothing and there should be something."</p>
+                    </div>
+                    
+                    <div class="white-space-metaphor">
+                        <h4>🎯 Die Waldschrat-Strategie</h4>
+                        <p>Während alle anderen versuchen, KI zu bekämpfen oder blind zu kopieren, erschließe ich mit Ihnen die Räume, wo Tradition und Innovation verschmelzen und echte Wertschöpfung entsteht. Hier entstehen die Lösungen, die kein ChatGPT generieren kann.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proof Section -->
+    <section class="proof-section">
+        <div class="container">
+            <h2 class="section-title">🛠️ "Nit schwätza macha" - Aktuelle Projekte</h2>
+            <p class="section-subtitle">Während andere theoretisieren, schaffen wir Realitäten</p>
+            
+            <div class="proof-grid">
+                <div class="proof-item">
+                    <h4>✅ KI-Impact Community Aufbau</h4>
+                    <p>150+ aktive Mitglieder, regelmäßige Workshops, LinkedIn-Gruppe mit wachsender Community. KIQI beratend mitentwickelt. Nächster Event: 30. September!</p>
+                </div>
+                
+                <div class="proof-item">
+                    <h4>✅ N8N & KIQI Entwicklung</h4>
+                    <p>N8N Prozessautomatisierung mit Johannes und Holger: Lieferschein-Erkennung → automatische Bestellzuordnung. KIQI Marketing-Assistent beratend mit Holger und Marc mitentwickelt.</p>
+                </div>
+                
+                <div class="proof-item">
+                    <h4>✅ "Strategy Sherlock" & "Elektro Einstein"</h4>
+                    <p>Funktionende KI-Agenten für Wettbewerbsanalyse und Elektrotechnik-Beratung. Echte Kunden, messbare Ergebnisse.</p>
+                </div>
+                
+                <div class="proof-item">
+                    <h4>🎯 Nächster Workshop: 30. September</h4>
+                    <p><strong>Prozesse mit KI orchestrieren!</strong><br>
+                    18-21 Uhr, Schramberg Rathaus<br>
+                    Laptop mitbringen - wir bauen live Automatisierungen</p>
                 </div>
             </div>
         </div>
@@ -743,55 +948,8 @@
         </div>
     </section>
 
-    <!-- Cocktail Section -->
-    <section id="cocktail" class="cocktail-section">
-        <div class="container">
-            <div class="cocktail-content">
-                <div class="cocktail-visual">
-                    <div class="cocktail-glass">🍸</div>
-                    <h3 style="color: #fbbf24; margin-top: 1rem;">The Waldschrat</h3>
-                    <p style="font-style: italic;">Taste the Innovation</p>
-                </div>
-                
-                <div class="cocktail-info">
-                    <h2>Innovation braucht den richtigen Spirit</h2>
-                    <p>Wie ein perfekt komponierter Cocktail entsteht Innovation durch die richtige Mischung der Zutaten. "The Waldschrat" vereint Tradition mit Vision – genau wie unsere Beratung.</p>
-                    
-                    <div class="cocktail-recipe">
-                        <h4>🍸 Das Rezept für Innovation:</h4>
-                        <div class="ingredient">
-                            <span>Silicon Valley Vision</span>
-                            <span>2 parts</span>
-                        </div>
-                        <div class="ingredient">
-                            <span>Schwarzwälder Gründlichkeit</span>
-                            <span>1 part</span>
-                        </div>
-                        <div class="ingredient">
-                            <span>KI-Kompetenz</span>
-                            <span>1 splash</span>
-                        </div>
-                        <div class="ingredient">
-                            <span>Ukulele-Spirit</span>
-                            <span>1 dash</span>
-                        </div>
-                        <div class="ingredient">
-                            <span>30 Jahre Erfahrung</span>
-                            <span>On the rocks</span>
-                        </div>
-                    </div>
-                    
-                    <div class="innovation-metaphor">
-                        <h4>🎯 Die Innovation-Formel</h4>
-                        <p>Wie bei einem guten Cocktail geht es nicht nur um die Zutaten, sondern um das perfekte Timing, die richtige Technik und die Leidenschaft dahinter. Innovation entsteht, wenn verschiedene Elemente harmonisch zusammenwirken.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- About Section -->
-    <section class="about">
+    <section id="about" class="about">
         <div class="container">
             <div class="about-content">
                 <div class="profile-section">
@@ -800,8 +958,84 @@
                 </div>
                 
                 <div class="about-text">
-                    <h2>Der Innovations-Waldschrat</h2>
-                    <p>Mit über 30 Jahren Erfahrung in Innovation und Community Building bringe ich Silicon Valley Know-how zurück in den Schwarzwald. Als ehemaliger SAP Chief Community Evangelist und Software AG Innovation Leader verbinde ich globale Tech-Expertise mit regionalem Geschäftsverständnis.</p>
-                    <p>Mein Ansatz: Innovation ganzheitlich denken, praktisch umsetzen – ohne Hype, mit nachweisbaren Ergebnissen. KI ist dabei der stärkste Hebel, aber erfolgreiche Transformation braucht mehr. Und ja, die Ukulele ist immer dabei – Kreativität und Rhythmus sind essentiell für Innovation.</p>
+                    <h2>Der Waldschrat: Brückenbauer zwischen Welten</h2>
+                    <p><strong>Die Heldenreise:</strong> 20 Jahre im Silicon Valley, wo ich mit Doug Engelbart, Kevin Kelly und den Pionieren der digitalen Revolution zusammenarbeitete. Als Gastgeber des Future Salons brachte ich Visionäre zusammen und lernte von den Besten.</p>
+                    
+                    <p><strong>Der Wendepunkt:</strong> Nach COVID erkannte ich - wahre Innovation entsteht nicht im Valley, sondern dort, wo globale Weisheit auf lokale Bedürfnisse trifft. Kevin Kellys "White Space"-Theorie wurde mein Kompass.</p>
+                    
+                    <p><strong>Die Mission:</strong> Als Waldschrat erschließe ich die Räume, die KI nicht automatisieren kann - wo Tradition und Innovation verschmelzen, wo echte Wertschöpfung entsteht.</p>
                     
                     <div class="about-features">
+                        <h4>🎯 "Nit schwätza macha" - Aktuelle Projekte:</h4>
+                        <ul class="feature-list">
+                            <li>KI-Impact Community - 150+ Mitglieder, monatliche Workshops</li>
+                            <li>N8N Prozessautomatisierung - Live-Implementierung mit lokalen Unternehmen</li>
+                            <li>"Strategy Sherlock" & "Elektro Einstein" - Funktionende KI-Agenten</li>
+                            <li>KIQI Marketing-Assistent - Beratend mitentwickelt</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="workshop-highlight">
+                        <h3>🎯 Nächster Workshop: 30. September 2025</h3>
+                        <h4>Prozesse mit KI orchestrieren!</h4>
+                        <p><strong>18-21 Uhr | Schramberg Rathaus</strong><br>
+                        Laptop mitbringen - wir bauen live Automatisierungen mit N8N</p>
+                        <a href="http://ki-impact.org" class="community-button">Jetzt anmelden!</a>
+                    </div>
+                    
+                    <div class="community-cta">
+                        <h4>🌐 KI-Impact Community</h4>
+                        <p>Werde Teil der wachsenden Schwarzwälder KI-Community (150+ Mitglieder)</p>
+                        <a href="http://ki-impact.org" class="community-button">ki-impact.org besuchen</a>
+                        <a href="https://www.linkedin.com/groups/9804412/" class="community-button">LinkedIn-Gruppe beitreten</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <h2>Lass uns gemeinsam an dieser positiven Zukunft bauen!</h2>
+            <p>Bereit für die Transformation? Der Waldschrat führt Sie durch die White Spaces der Innovation.</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>📧 E-Mail</h3>
+                    <a href="mailto:mark@finnern.com">mark@finnern.com</a>
+                </div>
+                
+                <div class="contact-item">
+                    <h3>📱 Telefon</h3>
+                    <a href="tel:+4917066883388">+49 170 66 88 33 88</a>
+                </div>
+                
+                <div class="contact-item">
+                    <h3>🌐 KI-Impact Community</h3>
+                    <a href="http://ki-impact.org" target="_blank">ki-impact.org</a>
+                </div>
+                
+                <div class="contact-item">
+                    <h3>💼 LinkedIn</h3>
+                    <a href="https://www.linkedin.com/in/finnern" target="_blank">linkedin.com/in/finnern</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <section class="footer">
+        <div class="container">
+            <p>&copy; 2025 TheWaldschrat.com - Wo Black Forest auf Silicon Valley trifft 🌲🚀</p>
+        </div>
+    </section>
+
+    <script>
+        function playInnovationSound() {
+            // Innovation sound effect - could be implemented
+            console.log('🎸 Innovation activated!');
+        }
+    </script>
+</body>
+</html>
